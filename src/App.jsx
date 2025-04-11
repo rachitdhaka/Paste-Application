@@ -32,7 +32,6 @@ const router=createBrowserRouter(
         <div>
           <Navbar/>
           <ViewPaste/>
-          
         </div>
     },
   ]
