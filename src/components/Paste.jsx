@@ -46,7 +46,7 @@ const Paste = () => {
               )
             }
           ) : 
-          // No paste 
+          // No paste - agar paste hi exsist nahi kartha tho 
           <div className='flex  flex-col justify-center items-center '>
                 No Paste Exsist , Create One ! 
                 <NavLink to="/">
