@@ -6,7 +6,7 @@ const toastConfig = {
   position: 'top-right',
   duration: 3000,
   style: {
-    margin:'12px',
+    margin: '12px',
     background: '#333',
     color: '#fff',
     padding: '8px 12px',
@@ -31,11 +31,18 @@ export const pasteSlice = createSlice({
       toast.success("Paste Created Successfully", toastConfig);
     },
     updateToPastes: (state, action) => {
-      // Implement update logic here and use toastConfig
-      toast.success("Paste Updated Successfully", toastConfig);
+      const paste = action.payload;
+      const index = state.pastes.findIndex((item) => item._id === paste._id)
+      if (index >= 0) {
+        state.pastes[index] = paste;
+        localStorage.setItem("pastes", JSON.stringify(state.pastes))
+        toast.success("Paste Updated Successfully", toastConfig);
+      }
+
     },
     resetAllToPastes: (state, action) => {
-      // Implement reset logic here and use toastConfig
+      state.pastes = []
+      localStorage.removeItem("pastes")
       toast.success("All Pastes Reset", toastConfig);
     },
   }

@@ -44,7 +44,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="flex mt-4 place-content-center gap-7">
+      <div className="flex mt-4 justify-center align-middle gap-7">
         <input
           type="text"
           value={title}
@@ -55,7 +55,7 @@ const Home = () => {
 
         <button
           onClick={createPaste}
-          className="bg-gray-100 border border-gray-300 rounded-4xl p-2  "
+          className='bg-blue-600 rounded-2xl  text-white text-xs  px-2'
         >
           {pasteId ? "Update Paste" : "Create Paste"}
         </button>
